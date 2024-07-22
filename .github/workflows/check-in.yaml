@@ -2,9 +2,9 @@ name: Check-in
 
 on:
   workflow_dispatch:
-  
+
 jobs:
-  build:
+  execute:
   
     runs-on: ubuntu-latest
     strategy:
@@ -21,4 +21,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Execute main script
+        env:
+          account_id: ${{ secrets.ACCOUNT_ID }}
+          account_id_v2: ${{ secrets.ACCOUNT_ID_V2 }}
+          account_mid_v2: ${{ secrets.ACCOUNT_MID_V2 }}
+          cookie_token: ${{ secrets.COOKIE_TOKEN }}
+          cookie_token_v2: ${{ secrets.COOKIE_TOKEN_V2 }}
+          ltmid_v2: ${{ secrets.LTMID_V2 }}
+          ltoken_v2: ${{ secrets.LTOKEN_V2 }}
+          ltuid_v2: ${{ secrets.LTUID_V2 }}
         run: python main.py
