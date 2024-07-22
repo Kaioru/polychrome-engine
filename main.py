@@ -4,7 +4,7 @@ import asyncio
 import os
 
 async def main():
-    load_dotenv();
+    load_dotenv()
 
     cookies = {
         "account_id": os.environ['account_id'],
