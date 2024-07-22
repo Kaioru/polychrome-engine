@@ -1,0 +1,2 @@
+genshin @ git+https://github.com/thesadru/genshin.py@dev
+python-dotenv==1.0.1

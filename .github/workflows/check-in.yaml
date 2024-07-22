@@ -1,0 +1,24 @@
+name: Check-in
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11.9"]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Execute main script
+        run: python main.py
