@@ -1,2 +1,2 @@
-genshin @ git+https://github.com/thesadru/genshin.py@dev
+genshin @ git+https://github.com/thesadru/genshin.py@master
 python-dotenv==1.0.1
